@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <span>Visualizador de Enlaces</span>
+</mat-toolbar>
+<mat-card>
+  <app-url-input (add)="addUrl($event)"></app-url-input>
+  <app-url-list [UrlsList]="Urls" (removeUrl)="borrarUrl($event)" > </app-url-list>  
+</mat-card>
+<mat-card-footer>
+    <button mat-raised-button color="primary">Like</button>
+    <button mat-raised-button color="accent">Share</button>
+    <button mat-raised-button color="warn">Subscribe</button>
+</mat-card-footer>

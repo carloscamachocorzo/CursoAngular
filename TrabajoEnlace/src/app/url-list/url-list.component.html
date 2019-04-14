@@ -1,0 +1,15 @@
+<mat-grid-list *ngIf="UrlsList.length > 0" cols="6" rowHeight="100px">
+    <mat-grid-tile *ngFor="let ruta of UrlsList" [colspan]="2" [rowspan]="3">      
+       <iframe
+        *ngIf="ruta.tipo > 0"
+        width="220"
+        height="250"
+        [src]="ruta.rutaurl | pipeUrl"
+        frameborder="2"
+      ></iframe>
+      <div>
+        <img [src]="ruta.rutaurl" width="220" height="250" alt="" />
+      </div>
+      <button (click)="borrarUrl(ruta)">Eliminar</button>
+    </mat-grid-tile>
+  </mat-grid-list>
